@@ -1,0 +1,44 @@
+.about-me {
+    @include container;
+    display: flex;
+    position: relative;
+
+    & > * {
+        flex-basis: 50%;
+    }
+    .desc {
+        span {
+            display: block;
+        }
+        span:not(:first-child) {
+            margin-top: 1rem;
+        }
+        .skills {
+            font-size: 2rem;
+            position: relative;
+            & > * {
+                position: absolute;
+            }
+        }
+    }
+    .my-img {
+        &.slide {
+            animation: slide-from-right 0.5s;
+            animation-delay: 0.3s;
+        }
+        img {
+            width: 100%;
+        }
+    }
+    button {
+        position: absolute;
+    }
+
+    @media (max-width: 600px) {
+        .my-img {
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
