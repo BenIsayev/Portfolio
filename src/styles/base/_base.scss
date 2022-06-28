@@ -3,11 +3,12 @@
 }
 html {
     scroll-behavior: smooth;
-    color: #fff;
+    color: #fafafa;
+    font-family: monsterrat;
 }
 body {
     margin: 0;
-    background: #000000;
+    background: #1c1c1c;
     overflow: hidden;
     &.scroll-enable {
         overflow: auto;
@@ -34,8 +35,23 @@ h5,
 h6 {
     margin: 0;
     padding: 0;
+    font-family: kdam;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+li {
+    padding: 0;
+    margin: 0;
 }
 
 section {
     min-height: 100vh;
+}
+
+.carousel.carousel-slider .control-arrow {
+    background-color: rgba(0, 0, 0, 0.2);
 }

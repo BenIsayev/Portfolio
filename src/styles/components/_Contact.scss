@@ -1,0 +1,75 @@
+.contact {
+    @include container;
+    max-width: calc(900px + $default-gap);
+    position: relative;
+    .title {
+        @include title($line-color: $clr1);
+    }
+    form {
+        width: 100%;
+        .name-and-contact-container,
+        .message-container {
+            display: flex;
+            margin-bottom: 2rem;
+            div.input {
+                flex-basis: 50%;
+                display: flex;
+                flex-direction: column;
+                input {
+                    width: 90%;
+                    color: #fff;
+                    background: none;
+                    border: none;
+                    border-bottom: 1px solid white;
+                    padding: 5px 10px;
+                    font-size: 1.5rem;
+                    &:focus-visible {
+                        outline: none;
+                    }
+                }
+            }
+        }
+        .message-container {
+            flex-direction: column;
+            gap: 1rem;
+            textarea {
+                width: 100%;
+                height: 150px;
+                // background: none;
+                border: none;
+                resize: none;
+                font-size: 1.5rem;
+                font-weight: bold;
+                &:focus-visible {
+                    outline: none;
+                }
+            }
+        }
+        button {
+            @include custom-button($border-color: white);
+            &.success {
+                @include custom-button($border-color: green);
+                color: green;
+            }
+            .failed {
+                @include custom-button($border-color: red);
+                color: red;
+            }
+        }
+    }
+    .invalid-msg {
+        color: red;
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact {
+        form {
+            .name-and-contact-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    }
+}

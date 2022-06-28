@@ -1,44 +1,181 @@
+@property --hue {
+    initial-value: 0;
+    inherits: false;
+    syntax: "<number>";
+}
 .about-me {
     @include container;
-    display: flex;
     position: relative;
-
-    & > * {
-        flex-basis: 50%;
+    .title {
+        @include title($line-color: #e4c656);
     }
-    .desc {
-        span {
-            display: block;
+    .img-and-text-container {
+        gap: $default-gap;
+        display: flex;
+        .my-img {
+            max-width: 400px;
+            &.slide {
+                animation: slide-from-left 0.7s;
+            }
+            img {
+                width: 100%;
+                filter: drop-shadow(0 0 15px hsl(var(--hue), 75%, 75%));
+                animation: color-change 4s infinite;
+            }
         }
-        span:not(:first-child) {
-            margin-top: 1rem;
+        .desc {
+            overflow: hidden;
+            max-width: 500px;
+            &.slide {
+                animation: slide-from-right 0.7s;
+            }
+            span {
+                display: block;
+                text-overflow: ellipsis;
+                white-space: wrap;
+            }
+            span:not(:first-child),
+            div {
+                margin-top: 1rem;
+            }
+            div {
+                span {
+                    svg {
+                        margin-right: 1rem;
+                    }
+                }
+            }
+        }
+    }
+    .skill-container {
+        margin-top: 2rem;
+        position: relative;
+        padding: 1.5rem;
+        max-width: calc(900px + $default-gap);
+        width: 100%;
+        display: grid;
+        place-items: center;
+        border: 1px solid $clr2;
+        border-radius: 1rem;
+        h2 {
+            margin-bottom: 2rem;
+            text-decoration: underline;
         }
         .skills {
             font-size: 2rem;
-            position: relative;
-            & > * {
-                position: absolute;
-            }
-        }
-    }
-    .my-img {
-        &.slide {
-            animation: slide-from-right 0.5s;
-            animation-delay: 0.3s;
-        }
-        img {
-            width: 100%;
-        }
-    }
-    button {
-        position: absolute;
-    }
+            display: flex;
+            flex-wrap: wrap;
+            gap: $default-gap;
 
-    @media (max-width: 600px) {
-        .my-img {
-            img {
-                width: 100%;
+            .expand-skills {
+                position: absolute;
+                right: 1rem;
+                top: 1rem;
+                height: 20px;
+                width: 20px;
+
+                &:hover {
+                    .expand-skills-text {
+                        opacity: 1;
+                    }
+                    .show-more.outer-circle,
+                    .inner-circle {
+                        opacity: 0;
+                        animation: none;
+                    }
+                }
+
+                .show-more.outer-circle {
+                    cursor: pointer;
+                    height: 100%;
+                    width: 100%;
+                    border-radius: 50%;
+                    border: 1px solid white;
+                    place-items: center;
+                    animation: flicker linear 4s infinite;
+                }
+                .inner-circle {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    cursor: pointer;
+                    border-radius: 50%;
+                    background-color: white;
+                    height: 50%;
+                    width: 50%;
+                    opacity: 1;
+                }
             }
+            .expand-skills-text {
+                cursor: pointer;
+                text-align: center;
+                opacity: 0;
+                font-size: 0.5rem;
+                position: absolute;
+                right: 0;
+                top: 0;
+                left: 50%;
+                top: 50%;
+                transform: translate(-100%, -50%);
+                display: flex;
+                flex-direction: column;
+            }
+            span {
+                display: flex;
+                align-items: center;
+                &.fade {
+                    svg {
+                        animation: fade-in 1s;
+                    }
+                }
+            }
+            .js {
+                color: #f0db4f;
+            }
+            .git {
+                color: #3e2c00;
+            }
+            .html {
+                color: #f06529;
+            }
+            .css {
+                color: #2965f1;
+            }
+            .sass {
+                color: #cd6799;
+            }
+            .node {
+                color: #68a063;
+            }
+            .react {
+                color: #61dbfb;
+            }
+            .vue {
+                color: #41b883;
+            }
+            .angular {
+                color: #dd1b16;
+            }
+        }
+        .extra-skills {
+            margin-top: 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            .comment {
+                font-size: 0.6rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 910px) {
+    .about-me {
+        .img-and-text-container {
+            flex-direction: column;
+            align-items: center;
         }
     }
 }

@@ -1,8 +1,64 @@
-@keyframes slide-from-right {
-    from {
-        transform: translateX(3000px);
+@keyframes slide-from-left {
+    0% {
+        transform: translateX(-3000px);
+        opacity: 0;
     }
-    to {
+    60% {
+        opacity: 0;
+    }
+    100% {
         transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes slide-from-right {
+    0% {
+        transform: translateX(3000px);
+        opacity: 0;
+    }
+    60% {
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes color-change {
+    to {
+        --hue: 360;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        transform: scale(10);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes flicker {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }

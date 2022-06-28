@@ -1,11 +1,24 @@
 //BASE
 
+@import "./base/variables";
 @import "./base/typography";
-@import "./base/base";
 @import "./base/mixins";
+@import "./base/base";
 @import "./base/keyframes";
+@import "./base/scrollbar";
+
+//PAGES
+
+@import "./pages/HomePage";
 
 //COMPONENTS
 
 @import "./components/Intro";
 @import "./components/AboutMe";
+@import "./components/Contact";
+@import "./components/NavBar";
+@import "./components/ProjectsList";
+@import "./components/ProjectsGallery";
+@import "./components/ContactBtn";
+@import "./components/Projects";
+@import "./components/ProjectModal";

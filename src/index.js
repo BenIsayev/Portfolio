@@ -5,15 +5,8 @@ import './styles/main.scss';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    console.log(entry);
-    // entry.isIntersecting = entry.target.classList.add('slide');
-  });
-});
-
-observer.observe(document.body);
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <Router>
     <App />

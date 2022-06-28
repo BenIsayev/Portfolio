@@ -1,0 +1,17 @@
+.contact-btn {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 10;
+    button {
+        cursor: pointer;
+        background-color: $clr1;
+        border: 1px solid $clr1;
+        box-shadow: 0 0 10px $clr1;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        color: #fff;
+    }
+}

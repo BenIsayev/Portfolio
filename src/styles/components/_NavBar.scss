@@ -1,0 +1,23 @@
+.navbar {
+    width: 100vw;
+    background: $clr2;
+    height: $navHeight;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    font-family: monsterrat-bold;
+    nav {
+        height: 100%;
+        ul {
+            font-weight: bold;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            li {
+                cursor: pointer;
+            }
+        }
+    }
+}

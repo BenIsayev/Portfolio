@@ -1,15 +1,9 @@
 import videoBg from '../assets/video/numbers.mp4';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faFacebook,
-  faGithub,
-  faLinkedin,
-  faInstagram,
-} from '@fortawesome/free-brands-svg-icons';
-import { faAnglesDown, faAnglesRight } from '@fortawesome/free-solid-svg-icons';
-import { NavLink } from 'react-router-dom';
+import { faAnglesDown, faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import SocialMedia from './SocialMedia';
 
-const Intro = ({ handleClassFlow }) => {
+const Intro = ({ handleClassFlow, scrollToProjects }) => {
   return (
     <div className='welcome-view'>
       <video
@@ -31,44 +25,19 @@ const Intro = ({ handleClassFlow }) => {
           Web Developer
         </span>
         <div className='links'>
-          <NavLink to={'/projects'} className='projects-btn'>
-            <div className='slider'></div>
-            <span>Projects</span>
-            <FontAwesomeIcon icon={faAnglesRight} />
-          </NavLink>
-          <button className='about-btn'>
+          <button className='about-btn' onClick={handleClassFlow}>
             <div className='slider'></div>
             <span> About</span>
+            <FontAwesomeIcon icon={faAngleDown} />
+          </button>
+          <button className='projects-btn' onClick={scrollToProjects}>
+            <div className='slider'></div>
+            <span>Projects</span>
             <FontAwesomeIcon icon={faAnglesDown} />
           </button>
         </div>
       </div>
-      <div className='social-media'>
-        <a
-          target='_blank'
-          rel='noreferrer'
-          href='https://www.linkedin.com/in/ben-isayev/'
-        >
-          <FontAwesomeIcon icon={faLinkedin} />
-        </a>
-        <a target='_blank' rel='noreferrer' href='https://github.com/BenIsayev'>
-          <FontAwesomeIcon icon={faGithub} />
-        </a>
-        <a
-          target='_blank'
-          rel='noreferrer'
-          href='https://www.facebook.com/ben.isayev/'
-        >
-          <FontAwesomeIcon icon={faFacebook} />
-        </a>
-        <a
-          target='_blank'
-          rel='noreferrer'
-          href='https://www.instagram.com/benisayev/'
-        >
-          <FontAwesomeIcon icon={faInstagram} />
-        </a>
-      </div>
+      <SocialMedia />
     </div>
   );
 };

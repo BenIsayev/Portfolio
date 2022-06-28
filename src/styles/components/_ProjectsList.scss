@@ -1,0 +1,46 @@
+.projects-list {
+    max-width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3rem;
+    .project-preview {
+        cursor: pointer;
+        max-width: 800px;
+        text-align: center;
+        transition: transform 0.3s;
+        animation: slide-from-right 1s;
+        opacity: 0;
+
+        &.appear {
+            opacity: 1;
+        }
+        &:hover {
+            transform: scale(1.1);
+        }
+        .project-img {
+            width: 100%;
+            img {
+                width: 100%;
+            }
+        }
+
+        .project-details {
+            position: relative;
+            padding: 1rem;
+            .view-project {
+                position: absolute;
+                right: 1rem;
+                top: 0.2rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 420px) {
+    .projects-list {
+        .project-preview {
+            font-size: 3.5vw;
+        }
+    }
+}

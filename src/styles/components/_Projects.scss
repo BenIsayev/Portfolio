@@ -1,0 +1,22 @@
+.projects-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: calc(3rem + $navHeight) 0;
+    background: #373737;
+    .title {
+        @include title($line-color: #76eef8);
+    }
+    .layout-select {
+        margin-bottom: 3rem;
+        ul {
+            display: flex;
+            li {
+                cursor: pointer;
+                border: 1px solid white;
+                padding: 0.2rem 0.5rem;
+            }
+        }
+    }
+}

@@ -1,8 +1,50 @@
 @mixin container {
-    max-width: 1200px;
-    padding-top: 2rem;
+    padding: 100px 0;
     margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
     @media (max-width: 1200px) {
-        padding: 2rem;
+        padding: 100px 2rem;
+    }
+}
+
+@mixin custom-button($border-color) {
+    cursor: pointer;
+    position: relative;
+    font-size: 30px;
+    padding: 5px 20px;
+    border-radius: 0.3rem;
+    background: none;
+    color: #fff;
+    font-family: kdam;
+    border: 2px solid $border-color;
+    box-shadow: 0 0 10px $border-color;
+    text-shadow: 0 0 10px $border-color;
+    span {
+        margin-right: 1rem;
+    }
+}
+
+@mixin title($line-color) {
+    position: relative;
+    span {
+        position: absolute;
+        color: $line-color;
+        top: -15px;
+    }
+    h1 {
+        font-size: 2rem;
+        font-family: kdam;
+        margin-bottom: 2rem;
+    }
+    .line {
+        position: absolute;
+        background-color: $line-color;
+        width: 70%;
+        height: 2px;
+        bottom: 30px;
     }
 }
