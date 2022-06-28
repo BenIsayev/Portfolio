@@ -57,6 +57,27 @@
             }
         }
     }
+    .social {
+        position: relative;
+        .social-media {
+            transform: none;
+            margin: auto;
+            justify-content: center;
+            flex-direction: row;
+            display: flex;
+            gap: 1rem;
+            border: 1px solid #fff;
+            border-radius: 2rem;
+            position: initial;
+            padding: 0.5rem 1rem;
+            margin-top: 2rem;
+            width: fit-content;
+            font-size: 2rem;
+            > * {
+                color: #fff;
+            }
+        }
+    }
     .invalid-msg {
         color: red;
         margin-top: 1rem;

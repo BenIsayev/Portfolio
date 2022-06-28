@@ -1,5 +1,6 @@
 import emailjs from 'emailjs-com';
 import { useRef, useState } from 'react';
+import SocialMedia from './SocialMedia';
 
 const Contact = () => {
   const form = useRef();
@@ -128,6 +129,10 @@ const Contact = () => {
           {btnText}
         </button>
       </form>
+      <div className='social'>
+        <h1>Reach me on social media:</h1>
+        <SocialMedia />
+      </div>
     </section>
   );
 };
