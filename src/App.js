@@ -17,12 +17,10 @@ function App() {
       element.classList.add('fade');
     });
 
-    if (window.location.pathname === '/') {
-      document.querySelector('.my-img').classList.add('slide');
-      document.querySelector('.desc').classList.add('slide');
+    document.querySelector('.my-img').classList.add('slide');
+    document.querySelector('.desc').classList.add('slide');
 
-      document.getElementById('about').scrollIntoView();
-    }
+    document.getElementById('about').scrollIntoView();
   };
 
   const scrollToContact = () => {
